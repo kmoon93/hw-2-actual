@@ -149,6 +149,12 @@ new_actor11.save
 
 new_role = Role.new
 new_role["movie_id"] = new_movie["id"]
+new_role["actor_id"] = new_actor["id"]
+new_role["character_name"] = "Bruce Wayne"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = new_movie["id"]
 new_role["actor_id"] = new_actor2["id"]
 new_role["character_name"] = "Alfred"
 new_role.save
@@ -215,11 +221,21 @@ new_role.save
 
 new_role = Role.new
 new_role["movie_id"] = new_movie3["id"]
-new_role["actor_id"] = new_actor5["id"]
-new_role["character_name"] = "Commissioner Gordon"
+new_role["actor_id"] = new_actor9["id"]
+new_role["character_name"] = "Bane"
 new_role.save
 
-# xxxxx
+new_role = Role.new
+new_role["movie_id"] = new_movie3["id"]
+new_role["actor_id"] = new_actor10["id"]
+new_role["character_name"] = "John Blake"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = new_movie3["id"]
+new_role["actor_id"] = new_actor11["id"]
+new_role["character_name"] = "Selina Kyle"
+new_role.save
 
 # Prints a header for the movies output
 puts "Movies"
@@ -251,6 +267,5 @@ for role in roles
     movie_title = movie_id["title"]
     actor_name = actor_id["name"]
     role_name = role["character_name"]
-   
     puts "#{movie_title} #{actor_name} #{role_name}"
 end
